@@ -15,6 +15,13 @@ Together, WanderNest captures the essence of traveling to new destinations while
 
 ---
 
+## 📦 Deployment
+
+**WanderNest is Live!**  
+🔗 [Visit WanderNest on Vercel](https://wanderlust-hub.vercel.app/listings)
+
+---
+
 ## ✨ Features
 
 - 🔍 Browse and search listings by category and keyword  
@@ -134,22 +141,44 @@ WanderNest/
    node server.js
    ```
 
-## 📦 Deployment
 
-You can deploy this full-stack project using:
+## 🌐 Deployment Details
 
-### 🌐 Frontend
-You can deploy the full app using:
-	•	Render → Node.js server with automatic builds
-	•	Railway / Cyclic / Heroku → Simple GitHub deployment
-	•	Use environment variables from .env in your deployment dashboard
+### 🧑‍💻 Hosting Platform
+- **Vercel** – Used for deploying the full application, including backend (with serverless functions support if needed).
+  - Auto-deploys from GitHub
+  - HTTPS enabled by default
+  - Great developer experience for Node.js apps
 
 ### ☁️ Image Storage
-   •	Cloudinary → Upload and deliver images with secure URL access
+- **Cloudinary** – Handles secure image uploads and optimization.
+  - All images are stored and served through Cloudinary URLs.
 
 ### ☁️ Database
-   •	MongoDB Atlas → Replace local URI in .env with your cluster URI for cloud hosting
+- **MongoDB Atlas** – Cloud-hosted MongoDB database.
+  - Replace your local connection URI with the one from MongoDB Atlas:
+    ```env
+    DATABASE_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/wandernest
+    ```
 
+---
+
+## 🔧 .env Configuration for Vercel
+
+Add the following environment variables in your [Vercel Dashboard](https://vercel.com/dashboard):
+
+```env
+CLOUD_NAME=your_cloudinary_name
+CLOUD_API_KEY=your_cloudinary_key
+CLOUD_API_SECRET=your_cloudinary_secret
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_CALLBACK_URL=https://wandernest.vercel.app/auth/google/callback
+
+SESSION_SECRET=your_custom_session_secret
+DATABASE_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/wandernest
+```
 ---
 
 ## 🤝 Contributing
